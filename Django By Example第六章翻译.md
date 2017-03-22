@@ -346,7 +346,7 @@ def user_follow(request):
              $('span.count .total').text(previous_action == 'follow' ? previous_followers + 1 : previous_followers - 1);
           }
         }
-      });
+      );
     });
 {% endblock %}
 ```

@@ -1406,7 +1406,7 @@ order_created.delay(order.id)
 打开另外一个 shell ，使用以下命令开启 celery worker ：
 
 ```shell
-celery -A myshop worker -1 info
+celery -A myshop worker -l info
 ```
 
 Celery worker 现在已经运行，准备好执行任务了。确保 Django 的开发服务器也在运行当中。访问 http://127.0.0.1:8000/ ,在购物车中添加一些商品，然后完成一个订单。在 shell 中，你已经打开过了 Celery worker 所以你可以看到以下的相似输出：

@@ -1353,7 +1353,7 @@ from .celery import app as celery_app
 
 我们将创建一个异步任务来发送消息邮件来让用户知道他们下单了。
 
-约定俗成的一般用法是，在你的应用路径下的 `tasks` 模型里引入你应用的异步任务。在 `orders` 应用内创建一个新的文件，并命名为 `task.py` 。这是 Celery 寻找异步任务的地方。添加以下代码：
+约定俗成的一般用法是，在你的应用路径下的 `tasks` 模型里引入你应用的异步任务。在 `orders` 应用内创建一个新的文件，并命名为 `tasks.py` 。这是 Celery 寻找异步任务的地方。添加以下代码：
 
 ```python
 from celery import task

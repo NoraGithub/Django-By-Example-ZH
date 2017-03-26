@@ -76,7 +76,9 @@ class Image(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-            super(Image, self).save(*args, **kwargs)
+    # Overriding : to save separately to get away from the error: 
+    # needs to have a value for field “…” before this many-to-many relationship can be used
+    super (Dataset,self).save(*args, **kwargs)
 ```
 在这段代码中，我们使用了 Django 提供的`slugify()`函数在没有提供`slug`字段时根据给定的图片标题自动生slug,然后，我们保存了这个对象。我们自动生成slug，这样的话用户就不用自己输入`slug`字段了。
 ##**建立多对多关系**

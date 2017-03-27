@@ -591,6 +591,9 @@ Creating table thumbnail_kvstore
 我们将在图片详情页添加一个供用户点击的链接，表示他们喜欢这张图片。我们将会用 AJAX 来避免重载整个页面。首先，在 `views.py` 中创建一个可供用户点击“喜欢”或“不喜欢”的视图。编辑 images 应用的`views.py`，将以下代码添加进去：
 
 ```python
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+   
 @login_required
 @require_POST
 def image_like(request):
